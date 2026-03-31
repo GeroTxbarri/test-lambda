@@ -1,0 +1,73 @@
+tengo que hacer una tarea, me gustaria que me ayudes en esto, orientame un poco, es que es bastante y no sabria por donde empezar. explicame las cosas necesarias para instalarme y que tengo que preparar para esto, lo que tendre que hacer y los pasos a seguir para organizarme 
+
+haceme un resumen de que son cada una de las tecnologias mencionadas, para que sirven , que rol juegan y cuales de ellas son software que tenga que instalar: los stack, nestjs y nextjs, node,react,prisma, docker, postgresql,vercel ,render
+
+hola, tengo que hacer este proyecto usando nestJS y prisma, y tengo levantada ya una base de datos con docker, para eso use este archivo
+
+docker-compose.yml
+ . se que tengo que conectar mi codigos con la base de datos, y para eso , tengo que poner las credenciales correctas en el archivo
+
+.env
+ para conectarme con la base de datos. la base de datos la hice con esto: version: "3.9"
+services:
+    mediafy-db:
+        image: postgres:16-alpine
+        container_name: test-postgres
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: test
+            POSTGRES_PASSWORD: test
+            POSTGRES_DB: test
+        ports:
+            - "5432:5432"
+        volumes:
+            - mediafy_pg_data:/var/lib/postgresql/data
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U test"]
+            interval: 5s
+            timeout: 5s
+            retries: 5
+volumes:
+    mediafy_pg_data:
+Cual es la url  que debo poner en el .env para que se conecten bien??               
+
+.env
+ 
+
+schema.prisma
+ 
+
+prisma.config.ts
+ estoy usando nestjs con prisma en la version 7.6.0, y me dio este error al intentar conectar mi codigo con la base de datos:  geronimo@geronimo-conectar:~/lambda-test/backend$ npx prisma db push
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Error: Prisma schema validation - (get-config wasm)
+Error code: P1012
+error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database connection or `accelerateUrl` for Accelerate to the `PrismaClient` constructor. See https://pris.ly/d/config-datasource and https://pris.ly/d/prisma7-client-config
+  -->  prisma/schema.prisma:13
+   | 
+12 |   provider = "postgresql"
+13 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+[Context: getConfig]
+
+Prisma CLI Version : 7.6.0                                            revisa mis archivos y decime que es lo que tengo que corregir para que funcione correctamente y se concete a mi base de datos
+
+genial, ahora debo de crear la tabla con la informacion del contacto , como lo hago?? la tabla del contacto deberia de tener la sigueinte informacion: id, nombre, numero, mail
+
+ok, ahora yo te voy a hacer un prompt, como ya avance un poco por hoy, quiero que me des un resumen de lo que fui haciendo y lo que tengo que hacer, algo asi como una hoja de ruta, te refresco un poco la memoria, tengo que Desarrollar una mini aplicación web para gestionar contactos. tiene que como minimo poder Crear un contacto (nombre + email)
+
+Listar contactos
+
+Eliminar contactos. para eso tendre que desarrollar y trabajar bases de datos, backend y frontend. por ahora es descargado correctamente todas las herramientas, como docker y nodejs. he levantado la base de datos segun lo especificado en la consigna, creando un archivo .yml con esa info. luego cree la carpeta donde empece a trabajabar, ahi le instale para empezar a trabajar nestJS y Prisma para conectarme con la base de datos. luego conecte mis codigos con la base de datos y tambien configure el apartado de los contactos. haceme una suerte de guia, o ruta, de lo que fui haciendo y lo que me queda por hacer, listalo de forma ordenada y completa, esto me servira para luego recordar todo y seguir avanzando con un norte claro. dame los pasos a seguir y divilo por secciones. ordenalo todo como para un docs, bien completo con todos los pasos logicos
+
+buenas, tengo que seguir con esto, por ahora logre concectar mi codigo con la base de datos, ademas de hacer la plantilla de los contactos con un nombre, id y mail. ahora tengo que hacer la logica del backend. ayudame a hacer 1 crear contactos, 2 listas contactos y 3 borrar contactos(por id id podria ser) . se que para esto, segun estuve viendo, debo de crear un recurso de contacto
+
+estoy desarrollando esto con nestjs, Actúa como desarrollador NestJS. Ya tengo configurado mi PrismaService. Modifica mi archivo contacts.service.ts para que cumpla con los 3 requisitos de mi test técnico: 1) Crear un contacto (nombre y email), 2) Listar todos los contactos, y 3) Eliminar un contacto por ID. es decir, progama el CRUD Dame el código exacto del servicio usando Prisma
+
+
+contactos.service.ts
+ me dice que la variable contact no se encuentra en el tipo prismaservice, me dirias que significa esto y como solucionarlo?
