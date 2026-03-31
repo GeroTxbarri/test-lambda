@@ -1,7 +1,7 @@
 import AgendarContacto from '../componentes/AgendarContacto';
 import ListarContactos from '../componentes/ListarContactos';
 import EliminarContacto from '../componentes/EliminarContacto';
-
+import BuscarContacto from '../componentes/BuscarContacto';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-zinc-50 font-sans dark:bg-black text-black dark:text-zinc-50">
@@ -40,8 +40,16 @@ export default function Home() {
             </div>
           </div>
 
-
-
+          <div className="flex flex-col border-t border-zinc-200 dark:border-zinc-800 pt-6">
+            <div className="mb-2">
+              <h2 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200">
+                Buscar contacto
+              </h2>
+            </div>
+            <div className="-mt-4">
+              <BuscarContacto />
+            </div>
+          </div>
         </section>
 
         {/* Lado derecho: Lista de Contactos */}
