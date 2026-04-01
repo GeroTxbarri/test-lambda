@@ -14,10 +14,11 @@ export default function BuscarContacto() {
   const [message, setMessage] = useState("");
   const [contacto, setContacto] = useState<Contacto | null>(null);
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!id) return;
-    
+
     setStatus("loading");
     setMessage("");
     setContacto(null);
@@ -44,6 +45,7 @@ export default function BuscarContacto() {
       setMessage(error.message || "Error al intentar conectarse al servidor.");
     }
   };
+
 
   return (
     <div className="w-full max-w-sm mt-8 border border-zinc-200 dark:border-zinc-800 p-6 rounded-lg bg-white dark:bg-black">

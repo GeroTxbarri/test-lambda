@@ -8,6 +8,7 @@ export default function ContactoForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
+  // 1. parte principal, la que hace un POST al backend
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
@@ -42,6 +43,7 @@ export default function ContactoForm() {
     }
   };
 
+  // 2. la ui
   return (
     <div className="w-full max-w-sm mt-8 border border-zinc-200 dark:border-zinc-800 p-6 rounded-lg bg-white dark:bg-black">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
