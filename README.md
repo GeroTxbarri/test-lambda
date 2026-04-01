@@ -15,13 +15,19 @@ Como correr el proyecto
 2) Levantar el Backend
 
 1. Abri una nueva terminal en la carpeta del backend
+2. instala las dependencias con esto:
+   ```bash
+   npm install
+   ```
+3. Deberia de haber un archivo .env por que hice que lo suba tambien, pero si no tenes que crearlo con estos datos:
+   DATABASE_URL="postgresql://test:test@localhost:5432/test?schema=public"
 
-2. Sincroniza la estructura de la base de datos usando Prisma:
+5. Sincroniza la estructura de la base de datos usando Prisma:
    ```bash
    npx prisma db push
    npx prisma generate
    ```
-3. Encende el servidor del backend:
+6. Encende el servidor del backend:
    ```bash
    npm run start:dev
    ```
@@ -29,8 +35,12 @@ Como correr el proyecto
 3) levantar el Frontend
 
 1. Abri una otra terminal en la carpeta del frontend
+2. instala las dependencias necesarias con:
+ ```bash
+   npm install 
+```
 
-2. Inicia:
+3. Inicia:
    ```bash
    npm run dev
    ```
